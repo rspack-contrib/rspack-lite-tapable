@@ -7,7 +7,7 @@ type FixedSizeArray<T extends number, U> = T extends 0
 type Measure<T extends number> = T extends 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
   ? T
   : never;
-type Append<T extends unknown[], U> = {
+type Append<T extends any[], U> = {
   0: [U];
   1: [T[0], U];
   2: [T[0], T[1], U];
@@ -18,7 +18,7 @@ type Append<T extends unknown[], U> = {
   7: [T[0], T[1], T[2], T[3], T[4], T[5], T[6], U];
   8: [T[0], T[1], T[2], T[3], T[4], T[5], T[6], T[7], U];
 }[Measure<T['length']>];
-export type AsArray<T> = T extends unknown[] ? T : [T];
+export type AsArray<T> = T extends any[] ? T : [T];
 
 export type Fn<T, R> = (...args: AsArray<T>) => R;
 export type FnAsync<T, R> = (
@@ -59,8 +59,8 @@ export interface HookInterceptor<
 > {
   name?: string;
   tap?: (tap: FullTap & IfSet<AdditionalOptions>) => void;
-  call?: (...args: unknown[]) => void;
-  loop?: (...args: unknown[]) => void;
+  call?: (...args: any[]) => void;
+  loop?: (...args: any[]) => void;
   error?: (err: Error) => void;
   result?: (result: R) => void;
   done?: () => void;
@@ -69,16 +69,16 @@ export interface HookInterceptor<
   ) => FullTap & IfSet<AdditionalOptions>;
 }
 
-type ArgumentNames<T extends unknown[]> = FixedSizeArray<T['length'], string>;
-type ExtractHookArgs<H> = H extends Hook<infer T, unknown> ? T : never;
-type ExtractHookReturn<H> = H extends Hook<unknown, infer R> ? R : never;
-type ExtractHookAdditionalOptions<H> = H extends Hook<unknown, unknown, infer A>
+type ArgumentNames<T extends any[]> = FixedSizeArray<T['length'], string>;
+type ExtractHookArgs<H> = H extends Hook<infer T, any> ? T : never;
+type ExtractHookReturn<H> = H extends Hook<any, infer R> ? R : never;
+type ExtractHookAdditionalOptions<H> = H extends Hook<any, any, infer A>
   ? A
   : never;
 
 export interface Hook<
-  T = unknown,
-  R = unknown,
+  T = any,
+  R = any,
   AdditionalOptions = UnsetAdditionalOptions,
 > {
   name?: string;
@@ -128,7 +128,7 @@ export class HookBase<T, R, AdditionalOptions = UnsetAdditionalOptions>
     }, options);
   }
 
-  _runCallInterceptors(...args: unknown[]) {
+  _runCallInterceptors(...args: any[]) {
     for (const interceptor of this.interceptors) {
       if (interceptor.call) {
         interceptor.call(...args);
@@ -1003,7 +1003,7 @@ export class AsyncSeriesWaterfallHook<
 
 const defaultFactory = (key: HookMapKey, hook: unknown) => hook;
 
-export type HookMapKey = unknown;
+export type HookMapKey = any;
 export type HookFactory<H> = (key: HookMapKey, hook?: H) => H;
 export interface HookMapInterceptor<H> {
   factory?: HookFactory<H>;
