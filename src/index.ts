@@ -1086,7 +1086,7 @@ export class QueriedHookMap<H extends Hook> {
   }
 
   isUsed(): boolean {
-    for (const key in this.hookMap._map.keys()) {
+    for (const key of this.hookMap._map.keys()) {
       if (this.get(key)?.isUsed()) {
         return true;
       }
