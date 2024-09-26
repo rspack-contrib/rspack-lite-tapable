@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
-    "@rspack/core": "1.0.0-beta.4",
+    "@rspack/core": "1.0.0-rc.1",
     "@types/node": "^20.14.13",
     "@types/jest": "29.5.12",
     "cross-env": "^7.0.3",
