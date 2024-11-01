@@ -7,8 +7,6 @@
     {
       "description": "Ignore node engines",
       "matchPackageNames": ["node"],
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["engines"],
       "enabled": false
     }
   ]
