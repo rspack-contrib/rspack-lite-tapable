@@ -50,6 +50,6 @@
     "provenance": true
   },
   "engines": {
-    "node": ">=16.20.2"
+    "node": ">=16.0.0"
   }
 }
