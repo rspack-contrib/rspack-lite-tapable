@@ -25,19 +25,22 @@ describe("AsyncSeriesHook", () => {
 		expect(typeof hook.promise).toEqual("function");
 	});
 
-	it("should have tap method", done => {
+	it("should have tap method", async () => {
 		const hook = new AsyncSeriesHook([]);
-		const mockTap = jest.fn();
+		const mockTap = rstest.fn();
 		hook.tap("somePlugin", mockTap);
-		hook.callAsync(() => done());
+
+		await new Promise((resolve) => {
+			hook.callAsync(() => resolve());
+		});
 		expect(mockTap).toHaveBeenCalledTimes(1);
 	});
 
-	it("should have promise method", done => {
+	it("should have promise method", async () => {
 		const hook = new AsyncSeriesHook([]);
-		const mockTap = jest.fn();
+		const mockTap = rstest.fn();
 		hook.tap("somePlugin", mockTap);
-		hook.promise().then(() => done());
+		await hook.promise();
 		expect(mockTap).toHaveBeenCalledTimes(1);
 	});
 

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Snapshot v1
 
-exports[`AsyncParallelHook should have to correct behavior 1`] = `
+exports[`AsyncParallelHook > should have to correct behavior 1`] = `
 {
   "async": {
     "callAsyncMultipleAsyncEarlyError": {

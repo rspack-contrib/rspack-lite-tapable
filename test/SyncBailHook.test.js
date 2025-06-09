@@ -43,9 +43,9 @@ describe("SyncBailHook", () => {
 
 	it("should bail on non-null return", async () => {
 		const h1 = new SyncBailHook(["a"]);
-		const mockCall1 = jest.fn();
-		const mockCall2 = jest.fn(() => "B");
-		const mockCall3 = jest.fn(() => "C");
+		const mockCall1 = rstest.fn();
+		const mockCall2 = rstest.fn(() => "B");
+		const mockCall3 = rstest.fn(() => "C");
 		h1.tap("A", mockCall1);
 		h1.tap("B", mockCall2);
 		h1.tap("C", mockCall3);
@@ -58,8 +58,8 @@ describe("SyncBailHook", () => {
 	it("should allow to intercept calls", () => {
 		const hook = new SyncBailHook(["x"]);
 
-		const mockCall = jest.fn();
-		const mockTap = jest.fn(x => x);
+		const mockCall = rstest.fn();
+		const mockTap = rstest.fn(x => x);
 
 		hook.intercept({
 			call: mockCall,
