@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Snapshot v1
 
-exports[`AsyncSeriesBailHook should have to correct behavior 1`] = `
+exports[`AsyncSeriesBailHook > should have to correct behavior 1`] = `
 {
   "async": {
     "callAsyncMultipleAsyncEarlyError": {
@@ -623,7 +623,7 @@ exports[`AsyncSeriesBailHook should have to correct behavior 1`] = `
 }
 `;
 
-exports[`AsyncSeriesHook should have to correct behavior 1`] = `
+exports[`AsyncSeriesHook > should have to correct behavior 1`] = `
 {
   "async": {
     "callAsyncMultipleAsyncEarlyError": {
@@ -1292,7 +1292,7 @@ exports[`AsyncSeriesHook should have to correct behavior 1`] = `
 }
 `;
 
-exports[`AsyncSeriesWaterfallHook should have to correct behavior 1`] = `
+exports[`AsyncSeriesWaterfallHook > should have to correct behavior 1`] = `
 {
   "async": {
     "callAsyncMultipleAsyncEarlyError": {

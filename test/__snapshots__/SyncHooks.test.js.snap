@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Snapshot v1
 
-exports[`SyncBailHook should have to correct behavior 1`] = `
+exports[`SyncBailHook > should have to correct behavior 1`] = `
 {
   "async": {},
   "intercept": {},
@@ -257,7 +257,7 @@ exports[`SyncBailHook should have to correct behavior 1`] = `
 }
 `;
 
-exports[`SyncHook should have to correct behavior 1`] = `
+exports[`SyncHook > should have to correct behavior 1`] = `
 {
   "async": {},
   "intercept": {},
@@ -530,7 +530,7 @@ exports[`SyncHook should have to correct behavior 1`] = `
 }
 `;
 
-exports[`SyncWaterfallHook should have to correct behavior 1`] = `
+exports[`SyncWaterfallHook > should have to correct behavior 1`] = `
 {
   "async": {},
   "intercept": {},
