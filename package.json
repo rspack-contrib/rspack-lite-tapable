@@ -27,7 +27,7 @@
     ]
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.2.5",
     "@rspack/core": "^1.5.8",
     "@rstest/core": "0.5.1",
     "@types/node": "^22.18.8",
