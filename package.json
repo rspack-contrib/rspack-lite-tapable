@@ -4,6 +4,7 @@
   "repository": "https://github.com/rspack-contrib/rspack-lite-tapable",
   "license": "MIT",
   "description": "Lite weight tapable for Rspack",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
