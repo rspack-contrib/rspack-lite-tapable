@@ -4,12 +4,14 @@
   "repository": "https://github.com/rspack-contrib/rspack-lite-tapable",
   "license": "MIT",
   "description": "Lite weight tapable for Rspack",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs"
     }
   },
   "scripts": {
