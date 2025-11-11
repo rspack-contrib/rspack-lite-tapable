@@ -4,20 +4,27 @@
   "repository": "https://github.com/rspack-contrib/rspack-lite-tapable",
   "license": "MIT",
   "description": "Lite weight tapable for Rspack",
-  "main": "./dist/index.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "tsc -b ./tsconfig.build.json",
-    "dev": "tsc -b -w",
+    "build": "rslib build",
+    "dev": "rslib build --watch",
     "lint": "biome check .",
     "lint:write": "biome check . --write",
     "prepare": "simple-git-hooks && npm run build",
     "test": "rstest run",
     "release": "node ./scripts/release.mjs"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "simple-git-hooks": {
     "pre-commit": "npx nano-staged"
   },
@@ -28,6 +35,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@rslib/core": "^0.17.1",
     "@rspack/core": "^1.6.0",
     "@rstest/core": "0.6.1",
     "@types/node": "^22.18.13",
