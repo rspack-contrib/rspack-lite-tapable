@@ -1117,30 +1117,6 @@ export class QueriedHookMap<H extends Hook> {
     }
     return false;
   }
-
-  tap(
-    key: HookMapKey,
-    options: Options<ExtractHookAdditionalOptions<H>>,
-    fn: Fn<ExtractHookArgs<H>, ExtractHookReturn<H>>,
-  ) {
-    return this.hookMap.for(key).tap(options, fn);
-  }
-
-  tapAsync(
-    key: HookMapKey,
-    options: Options<ExtractHookAdditionalOptions<H>>,
-    fn: FnAsync<ExtractHookArgs<H>, ExtractHookReturn<H>>,
-  ) {
-    return this.hookMap.for(key).tapAsync(options, fn);
-  }
-
-  tapPromise(
-    key: HookMapKey,
-    options: Options<ExtractHookAdditionalOptions<H>>,
-    fn: FnPromise<ExtractHookArgs<H>, ExtractHookReturn<H>>,
-  ) {
-    return this.hookMap.for(key).tapPromise(options, fn);
-  }
 }
 
 export class MultiHook<H extends Hook> {
